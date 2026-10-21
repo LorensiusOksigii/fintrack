@@ -1,0 +1,31 @@
+# ================================
+# FinTrack Backend — Dependencies
+# ================================
+
+# --- Web Framework ---
+fastapi==0.111.1
+uvicorn[standard]==0.30.3
+
+# --- Database ---
+sqlalchemy==2.0.31
+alembic==1.13.2
+psycopg2-binary==2.9.9        # PostgreSQL driver
+
+# --- Date Utilities ---
+python-dateutil==2.9.0.post0
+
+# --- Settings & Validation ---
+pydantic==2.8.2
+pydantic-settings==2.3.4
+
+# --- Authentication ---
+python-jose[cryptography]==3.3.0   # JWT encode/decode
+passlib[bcrypt]==1.7.4              # Password hashing
+
+# --- HTTP ---
+python-multipart==0.0.9            # Untuk form data (login form)
+httpx==0.27.0                      # HTTP client (untuk testing)
+
+# --- Development ---
+pytest==8.3.2
+pytest-asyncio==0.23.8

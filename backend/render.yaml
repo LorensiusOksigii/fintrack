@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: fintrack-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: PYTHONPATH=. alembic upgrade head && PYTHONPATH=. uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false          # diisi manual di Render dashboard
+      - key: SECRET_KEY
+        sync: false
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 1440
+      - key: DEBUG
+        value: true
+      - key: ALLOWED_ORIGINS
+        sync: false          # diisi setelah dapat URL Vercel
+    healthCheckPath: /health
+    autoDeploy: true

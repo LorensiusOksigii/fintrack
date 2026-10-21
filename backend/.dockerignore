@@ -1,0 +1,33 @@
+# File yang tidak perlu masuk ke Docker image
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment files — SECRET wajib di-inject via Railway env vars
+.env
+.env.*
+
+# Test files
+tests/
+pytest.ini
+.pytest_cache/
+
+# Type checking & linting cache
+.mypy_cache/
+.ruff_cache/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Git
+.git/
+.gitignore
+
+# Docs & misc
+*.md
+*.txt
+!requirements.txt

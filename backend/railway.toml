@@ -1,0 +1,16 @@
+# Railway deployment configuration
+# Dokumentasi: https://docs.railway.app/reference/config-as-code
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# releaseCommand dijalankan SEBELUM instance baru menerima traffic.
+# Ideal untuk migration — jika migration gagal, deploy dibatalkan otomatis.
+releaseCommand = "alembic upgrade head"
+startCommand = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+healthcheckPath = "/health"
+healthcheckTimeout = 30
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

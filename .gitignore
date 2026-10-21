@@ -1,0 +1,44 @@
+# ===========================
+# FinTrack — Root .gitignore
+# ===========================
+
+# ---- Python / Backend ----
+backend/__pycache__/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/**/*.pyo
+backend/.venv/
+backend/venv/
+backend/.env
+backend/*.egg-info/
+backend/dist/
+backend/build/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+
+# ---- Node / Frontend ----
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+frontend/.eslintcache
+
+# ---- Docker ----
+docker/.env
+
+# ---- General ----
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.idea/
+.vscode/settings.json
+*.swp
+*.swo
+
+# ---- Environment files ----
+.env
+.env.local
+.env.*.local
