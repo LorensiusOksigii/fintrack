@@ -16,7 +16,11 @@ const navItems = [
   { to: '/categories',   label: 'Kategori',   icon: Tag },
 ]
 
-export default function Sidebar() {
+interface Props {
+  onClose?: () => void
+}
+
+export default function Sidebar({ onClose }: Props) {
   const logout = useAuthStore((s) => s.logout)
   const user = useAuthStore((s) => s.user)
   const navigate = useNavigate()
@@ -26,8 +30,13 @@ export default function Sidebar() {
     navigate('/login', { replace: true })
   }
 
+  const handleNavClick = () => {
+    // Tutup drawer saat navigasi di mobile
+    onClose?.()
+  }
+
   return (
-    <aside className="flex flex-col w-60 min-h-screen bg-card border-r border-border">
+    <aside className="flex flex-col w-60 h-full bg-card border-r border-border">
       {/* Logo */}
       <div className="px-6 py-5 border-b border-border">
         <span className="text-xl font-bold text-foreground">💰 FinTrack</span>
@@ -39,6 +48,7 @@ export default function Sidebar() {
           <NavLink
             key={to}
             to={to}
+            onClick={handleNavClick}
             className={({ isActive }) =>
               cn(
                 'flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors',
