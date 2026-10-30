@@ -135,7 +135,7 @@ export default function BudgetForm({
             <input
               type="number"
               min="1"
-              step="1000"
+              step="1"
               placeholder="500000"
               className="w-full text-sm border border-input rounded-md px-3 py-2 bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               {...register('amount')}

@@ -39,7 +39,7 @@ export default function Sidebar({ onClose }: Props) {
     <aside className="flex flex-col w-60 h-full bg-card border-r border-border">
       {/* Logo */}
       <div className="px-6 py-5 border-b border-border">
-        <span className="text-xl font-bold text-foreground">💰 FinTrack</span>
+        <span className="text-xl font-bold text-foreground">🐶 FinTrack</span>
       </div>
 
       {/* Navigation */}
